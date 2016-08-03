@@ -1,7 +1,7 @@
 ##alert
 一款超小体积的PC、手机jQuery(Zepto)弹窗插件，可自己修改CSS定制自己的弹窗皮肤
 
-[http://sandbox.runjs.cn/show/miwszbne](http://sandbox.runjs.cn/show/miwszbne)这里查看效果演示的demo，可自定义皮肤。
+[在线演示](https://ydq.github.io/alert/demo.html)，可自定义皮肤。
 
 ---
 
