@@ -1,7 +1,7 @@
 ##alert
 一款超小体积的PC、手机jQuery(Zepto)弹窗插件，可自己修改CSS定制自己的弹窗皮肤
 
-[在线演示](https://ydq.github.io/alert/demo.html)，可自定义皮肤。
+[在线演示](http://alert.code.10176523.cn)，可自定义皮肤。
 
 ---
 
