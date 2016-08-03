@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="//apps.bdimg.com/libs/prism/0.0.1/prism.min.css"/>
+	<link rel="stylesheet" href="alert.css"/>
+	<script type="text/javascript" src="//apps.bdimg.com/libs/prism/0.0.1/prism.min.js"></script>
+	<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="alert.js"></script>
+	<style>
+	p{font-size:14px;line-height:16px;color:#777}
+	body{background-color:#fff;font-family:PingFang SC,Microsoft YaHei}
+	.hide{visibility:hidden;height:0;width:0;}
+	code{overflow:auto !important;}
+	pre{padding:1px !important;width:100%;}
+	.btn{border:1px solid #ccc;color:#666;display:inline-block;padding:3px 6px;cursor:pointer;font-size:14px;}
+	.btn:hover{border-color:#aaa;color:#333;}
+	.new:before{content:'New';color:red;text-shadow:0 0 5px yellow;font-weight:bold;padding:0 5px;}
+	</style>
+</head>
+<body>
+	<p><a href="https://github.com/ydq/alert">获取最新版本请移步至Github</a></p>
+	<div class="btn" onclick="$.alert('这是alert',function(a){$.alert('你点击了确定')})">带回调的alert</div>
+	<div class="btn showcode">code</div>
+	<pre class=" hide"><code class="language-javascript">//带回调函数的alert调用方式
+$.alert('这是alert',function(){
+	$.alert('你点击了确定')
+})</code></pre>
+	<div class="btn" onclick="$.confirm('这是confirm',function(a){$.alert('你点击了'+(a?'确定':'取消'))})">带回调的confirm</div>
+	<div class="btn showcode">code</div>
+	<pre class=" hide"><code class="language-javascript">//带回调函数的confirm调用方式
+$.confirm('这是confirm',function(a){
+	$.alert('你点击了'+(a?'确定':'取消'))
+})</code></pre>
+	<div class="btn new" onclick="$.confirm('点击确定不会关闭对话框！！',function(e){ if(!e) return ;this.find('.alert_content').html('回调函数阻止了对话框关闭，点击取消才能关闭！！');return false;})">return false阻止对话框关闭</div>
+	<div class="btn showcode">code</div>
+	<pre class=" hide"><code class="language-javascript">//回调函数中的this指向对话框（jquery对象）
+//return false可以阻止对话框关闭
+$.confirm('点击确定不会关闭对话框！！', function(e) {
+	if(!e) return;
+	this.find('.alert_content').html('回调函数阻止了对话框关闭，点击取消才能关闭！！');
+	return false; 
+})</code></pre>
+	<div class="btn new" onclick="var showdef = Math.random()>0.5;$.tips(showdef?'若不设置时间则默认2秒钟':'这是一条tips消息，5s后自动消失',showdef?2000:5000)">显示一条tips消息</div>
+	<div class="btn showcode">code</div>
+	<pre class=" hide"><code class="language-javascript">//设置自定义关闭时间的tips消息，不设置时间则默认2s后消失
+$.tips('这是tips消息，5s后自动消失',5000)</code></pre>
+
+	<script>
+	$(function(){
+		$('.showcode').on('click',function(){
+			$(this).next().toggleClass('hide')
+		})
+	})
+	</script>
+</body>
+</html>
