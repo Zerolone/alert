@@ -28,7 +28,7 @@
 				d.on('contextmenu',!1)
 				.on('click','.alert_btn_ok',{r:!0},_click)
 				.on('click','.alert_btn_cancel',{r:!1},_click)
-				.appendTo('body');
+				.appendTo('body').find('.alert_btn_ok').focus();
 			}
 			$._isalert=0;
 		},
