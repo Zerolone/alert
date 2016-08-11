@@ -35,9 +35,9 @@
 		tips:function(){
 			var args=arguments;
 			if(args.length){
-				var tipsContainer = $('.alert_tips_container');
-				tipsContainer.length||(tipsContainer=$('<div class="alert_tips_container"></div>').appendTo('body'));
-				$('<div class="alert_tips_item">'+args[0]+'</div>').appendTo(tipsContainer).fadeIn('fast').delay(args[1]*1||2000).slideUp('fast',function(){$(this).remove();});
+				var tipsContainer = $('.alert_tips');
+				tipsContainer.length||(tipsContainer=$('<div class="alert_tips"></div>').appendTo('body'));
+				$('<div>'+args[0]+'</div>').appendTo(tipsContainer).fadeIn('fast').delay(args[1]*1||2000).slideUp('fast',function(){$(this).remove();});
 			}
 
 		}
