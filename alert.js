@@ -4,7 +4,7 @@
 *    $.alert(string[,function])
 *    $.confirm(string[,function])
 *    $.tips(string[,number])
-*    version:2016-07-11
+*    version:2016-08-11
 */
 !function ($) {
     $.extend({
