@@ -114,6 +114,16 @@ $.confirm('&lt;iframe src="https://m.baidu.com/" width="100%" height="440" frame
 				<th>版本</th><th>方法</th><th>说明</th>
 			</tr>
 			<tr>
+				<th colspan="3"><pre><code>
+var dialog = $.alert('下面方法API中的dialog对象是这么获得的')
+$.confirm('回调中的this也是dialog对象',function(e){
+  //这里的this也是dialog对象
+  e||this.content('这样可以改变中间的内容')
+  return e;
+})</code></pre>
+				</th>
+			</tr>
+			<tr>
 				 <td data-label="版本">PC/mob</td>
 				 <td data-label="方法">dialog.content(str)</td>
 				 <td data-label="说明">修改对话框的内容</td>
