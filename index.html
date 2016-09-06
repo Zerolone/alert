@@ -67,7 +67,7 @@ $.confirm('点击确定不会关闭对话框！！', function(e) {
 		<div class="btn" id="demo4">显示一条tips消息</div>
 
 
-		<div class="btn new" id="demo5">自定义按钮文字</div>
+		<div class="btn" id="demo5">自定义按钮文字</div>
 		<div class="hide">
 <pre><code class="language-javascript">//自定义按钮文字
 var dialog = $.confirm('自定义按钮文字');
@@ -76,14 +76,15 @@ dialog.ok('ok').cancel('cancel');
 		</div>
 
 
-		<div class="btn new" id="demo6">自定义外观尺寸</div>
+		<div class="btn" id="demo6">自定义外观尺寸</div>
 		<div class="hide">
 <pre><code class="language-javascript">//自定义宽度，自定义内容区域的padding宽度
 $.confirm('&lt;iframe src="https://m.baidu.com/" width="100%" height="440" frameborder="no"/&gt;&lt;/iframe&gt;').padding(0).width(320).ok('关闭');
 </code></pre>
 		</div>
 		<br/>
-		<a id="mobdemo" class="btn" href="http://alert.code.10176523.cn/demo-mob.html">手机版演示</a>
+		<a class="btn mobdemo" href="http://alert.code.10176523.cn/demo-mob.html">手机版演示</a>
+		<a class="btn new mobdemo" href="http://alert.code.10176523.cn/weui-demo.html">weui版本</a>
 		<hr>
 		<p>使用文档：</p>
 		<table>
@@ -154,12 +155,12 @@ $.confirm('回调中的this也是dialog对象',function(e){
 				 <td data-label="说明">设置对话框总宽度</td>
 			</tr>
 		</table>
-		<p>文档最后更新：2016年08月11日</p>
+		<p>文档最后更新：2016年09月06日</p>
 	</div>
 
-	<script>
+	<script>i2016年09月06日
 	$(function(){
-		$('#mobdemo').on('click',function(){
+		$('.mobdemo').on('click',function(){
 			$.alert('<iframe src="'+$(this).attr('href')+'" width="100%" height="180" frameborder="no"></iframe>').padding(0).width(320).ok('关闭');
 			return false
 		})
