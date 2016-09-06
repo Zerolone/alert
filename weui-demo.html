@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>在线演示</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.4.3/weui.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script id="libjs" type="text/javascript" src="alert.weui.js"></script>
+	<style type="text/css">#content{margin:auto;width:280px;padding:20px 0;}</style>
+</head>
+<body>
+	<div id="content">
+		<a href="javascript:;" class="weui_btn weui_btn_primary">①alert - title+msg+callback</a>
+		<a href="javascript:;" class="weui_btn weui_btn_primary">②alert - msg+callback</a>
+		<a href="javascript:;" class="weui_btn weui_btn_primary">③alert - title+msg</a>
+		<a href="javascript:;" class="weui_btn weui_btn_primary">④alert - msg</a>
+		<a href="javascript:;" class="weui_btn weui_btn_primary">⑤confirm - title+msg+callback</a>
+		<a href="javascript:;" class="weui_btn weui_btn_primary">⑥confirm - msg+callback</a>
+		<a href="javascript:;" class="weui_btn weui_btn_primary">⑦confirm - title+msg</a>
+		<a href="javascript:;" class="weui_btn weui_btn_primary">⑧confirm - msg</a>
+	</div>
+	<script>
+	$(function(){
+		$('.weui_btn_primary').on('click',function(){
+			switch($(this).index()){
+				case 0:
+					$.alert('你的自定义标题','你的自定义对话框内容！！！',function(){$.alert('这是点击后的回调函数')})
+				break;
+				case 1:
+					$.alert('你的自定义对话框内容！！！',function(){$.alert('这是点击后的回调函数')})
+				break;
+				case 2:
+					$.alert('你的自定义标题','你的自定义对话框内容！！！')
+				break;
+				case 3:
+					$.alert('你的自定义对话框内容！！！')
+				break;
+				case 4:
+					$.confirm('你的自定义标题','你的自定义对话框内容！！！',function(e){$.alert('这是点击后的回调函数<br>你点击了 '+(e?'确定':'取消')+' 按钮')})
+				break;
+				case 5:
+					$.confirm('你的自定义对话框内容！！！',function(e){$.alert('这是点击后的回调函数<br>你点击了 '+(e?'确定':'取消')+' 按钮')})
+				break;
+				case 6:
+					$.confirm('你的自定义标题','你的自定义对话框内容！！！')
+				break;
+				case 7:
+					$.confirm('你的自定义对话框内容！！！')
+				break;
+			}
+		})
+	})
+	</script>
+</body>
+</html>
