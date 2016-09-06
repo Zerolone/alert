@@ -161,7 +161,7 @@ $.confirm('回调中的this也是dialog对象',function(e){
 	<script>
 	$(function(){
 		$('.mobdemo').on('click',function(){
-			$.alert('<iframe src="'+$(this).attr('href')+'" width="100%" height="180" frameborder="no"></iframe>').padding(0).width(320).ok('关闭');
+			$.alert('<iframe src="'+$(this).attr('href')+'" width="100%" height="400" frameborder="no"></iframe>').padding(0).width(320).ok('关闭');
 			return false
 		})
 		$('#demo1').on('click',function(){
