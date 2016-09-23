@@ -21,17 +21,19 @@ $.confirm('消息弹窗',function(e){
   //this 指向弹窗对象
 })
 $.tips('弹出一条2秒后自动消失的悬浮提示');
-$.tips('弹出一条5秒后自动消失的悬浮提示，仅限PC版本',5000);
+$.load('加载中提示');
+$.load();   //支持默认的提示语句
+$.loaded(); //加载完成后调用
 ```
 
 ###插件API
 
 |版本|API|说明|
 |---|---|---|
-|PC/mob|$.alert(msg[,fn])|弹出一个仅包含确定按钮的对话框，`msg`为内容，`fn(可空)`为回调函数|
-|PC/mob|$.confirm(msg[,fn])|弹出一个确定/取消按钮的对话框，`msg`为内容，`fn(可空)`为回调函数|
-|PC|$.tips(msg[,time])|`屏幕右上角`弹出一个自动消失的悬浮提示，`time(可空)`为关闭时间，默认为2000（2s）|
+|mob|$.alert(msg[,fn])|弹出一个仅包含确定按钮的对话框，`msg`为内容，`fn(可空)`为回调函数|
+|mob|$.confirm(msg[,fn])|弹出一个确定/取消按钮的对话框，`msg`为内容，`fn(可空)`为回调函数|
 |mob|$.tips(msg)|`屏幕中间`弹出一个自动消失的悬浮提示|
+|mob|$.load(msg)|`屏幕中间`弹出一个加载中的对话框|
 
 
 ###插件方法
@@ -46,13 +48,10 @@ $.confirm('回调中的this也是dialog对象',function(e){
 
 |版本|方法|说明|
 |---|---|---|
-|PC/mob|dialog.content(str)|修改对话框对象的内容|
-|PC/mob|dialog.ok(str)|修改确定按钮的文本|
-|PC/mob|dialog.cancel(str)|修改取消按钮的文本|
-|PC/mob|dialog.close()|关闭并销毁对话框|
-|PC|dialog.padding(str)|设置弹出窗的内容区域的填充，默认填充为css中设置的20|
-|PC|dialog.width(str)|设置弹出窗的宽度|
-
+|mob|dialog.content(str)|修改对话框对象的内容|
+|mob|dialog.ok(str)|修改确定按钮的文本|
+|mob|dialog.cancel(str)|修改取消按钮的文本|
+|mob|dialog.close()|关闭并销毁对话框|
 
 ####说明：
 - *`confirm`的回调函数默认有一个参数，参数值为`boolean`，当点击`确定`时参数为`ture`，当点击`取消`时参数为`false`*
@@ -61,7 +60,7 @@ $.confirm('回调中的this也是dialog对象',function(e){
 - *`alert`和`confirm`中的回调函数中的`this`对象指向当前对话框对象，例如在回调函数中使用：`this.content('这样可以直接修改对话框中间的内容')`，再配合`return false`可以自己做更丰富的消息展示*
 
 ###弹窗出现后的Dom结构如下：
-####alert和confirm的弹窗结构
+####alert和confirm、load的弹窗结构
 ```html
 <div class="alert_overlay">
   <div class="alert_msg">
@@ -73,16 +72,7 @@ $.confirm('回调中的this也是dialog对象',function(e){
   </div>
 </div>
 ```
-####pc版本tips结构(允许多次弹窗)
-```html
-<div class="alert_tips">
-  <div>tips1</div>
-  <div>tips2</div>
-  <div>tips3</div>
-  <div>tips4</div>
-</div>
-```
-####mob版本tips结构(不允许多次弹窗)
+####tips结构(不允许多次弹窗)
 ```html
 <div class="alert_tips">
   <div>tips</div>
@@ -90,5 +80,4 @@ $.confirm('回调中的this也是dialog对象',function(e){
 ```
 
 ###兼容性
-- pc版本兼容IE8以上的版本，不支持IE8！！！请向前看！！！
 - mob版本未详细测试，理论ios和4.4以上的android手机都支持，关于微信内置浏览器，动不动就抽风，之前测试可以，中间有一段时间测试突然不行了，必须给css中一些css3的属性设置`-webkit-`前缀，也许以后又会好起来，所以默认没加上，如希望稳定兼容请自行在所有css3属性和动画前面添加前缀
