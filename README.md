@@ -1,7 +1,7 @@
 ##alert
 fork 自 https://github.com/ydq/alert， 只保留了mob，增加了load弹窗
 
-一款超小体积的PC、手机jQuery(Zepto)弹窗插件，可自己修改CSS定制自己的弹窗皮肤
+一款超小体积的手机jQuery(Zepto【未验证】)弹窗插件，可自己修改CSS定制自己的弹窗皮肤
 
 [原版在线演示](http://alert.code.10176523.cn)，可自定义皮肤。
 
