@@ -5,7 +5,7 @@ fork 自 https://github.com/ydq/alert， 只保留了mob，增加了load弹窗
 
 [原版在线演示](http://alert.code.10176523.cn)，可自定义皮肤。
 
-[在线演示](http://www.zerolone.com/opensource/alert/index.html)
+[增加load弹窗后的在线演示](http://www.zerolone.com/opensource/alert/index.html)
 
 ---
 
