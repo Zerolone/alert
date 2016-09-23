@@ -7,6 +7,7 @@ fork 自 https://github.com/ydq/alert， 只保留了mob，增加了load弹窗
 
 [增加load弹窗后的在线演示](http://www.zerolone.com/opensource/alert/index.html)
 
+[增加load弹窗后的在线演示-单js文件，无需css](http://www.zerolone.com/opensource/alert/indexcss.html)
 ---
 
 ###使用demo
@@ -36,7 +37,7 @@ $.loaded(); //加载完成后调用
 |---|---|---|
 |mob|$.alert(msg[,fn])|弹出一个仅包含确定按钮的对话框，`msg`为内容，`fn(可空)`为回调函数|
 |mob|$.confirm(msg[,fn])|弹出一个确定/取消按钮的对话框，`msg`为内容，`fn(可空)`为回调函数|
-|mob|$.tips(msg)|`屏幕中间`弹出一个自动消失的悬浮提示|
+|mob|$.tips(msg,second)|`屏幕中间`弹出一个自动消失的悬浮提示，默认为2秒|
 |mob|$.load(msg)|`屏幕中间`弹出一个加载中的对话框|
 
 
@@ -64,7 +65,6 @@ $.confirm('回调中的this也是dialog对象',function(e){
 - *`alert`和`confirm`中的回调函数中的`this`对象指向当前对话框对象，例如在回调函数中使用：`this.content('这样可以直接修改对话框中间的内容')`，再配合`return false`可以自己做更丰富的消息展示*
 
 ###弹窗出现后的Dom结构如下：
-####alert和confirm、load的弹窗结构
 ```html
 <div class="alert_overlay">
   <div class="alert_msg">
@@ -74,12 +74,6 @@ $.confirm('回调中的this也是dialog对象',function(e){
       <button class="alert_btn alert_btn_cancel">取消</button>
     </div>
   </div>
-</div>
-```
-####tips结构(不允许多次弹窗)
-```html
-<div class="alert_tips">
-  <div>tips</div>
 </div>
 ```
 

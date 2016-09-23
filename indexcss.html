@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    
+</head>
+<body>
+<input type="button" value="confirm - 包含了alert和tip" id='btnConfirm'>
+
+<input type="button" value="loading - 加载中" id='btnLoad'>
+<input type="button" value="loading - 无参数，默认提示" id='btnLoad2'>
+
+
+<input type="button" value="tip - " id='btnLoad3'>
+
+
+
+<script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- alert -->
+<script src="alertcss.mob.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+$(function(){
+  $('#btnConfirm').click(function(){
+    console.info('click');
+    
+    $.confirm('是否取消当前医生的电话预约？',function(e){
+      console.info(e);
+      //$.alert('你点击了'+(e?'确定':'取消'))
+      if(e){
+        $.alert('跳回之前医生选择页面，这里未加跳转功能。').ok('自定义确定');
+      }else{
+        $.tips('点击了取消-不处理！');
+        console.info('点击了取消-不处理！');
+      }
+      
+    }).ok('取消掉').cancel('不取消');
+  });
+  
+  
+  $('#btnLoad').click(function(){
+    $.load('数据加载中，请稍后...，2秒后加载完毕。');
+    
+    setTimeout(function(){
+      console.info('loaded');
+      $.loaded();
+    },2000);
+  });
+  
+  $('#btnLoad2').click(function(){
+    $.load();
+    
+    console.info('btnLoad2')
+    
+    setTimeout(function(){
+      console.info('loaded');
+      $.loaded();
+    },2000);
+    
+  });
+
+  $('#btnLoad3').click(function(){
+    $.tips('这是一个提示');
+  });
+
+  
+
+});
+</script>
+
+</body>
+</html>
