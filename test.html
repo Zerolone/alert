@@ -5,9 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
     
-    <!-- alert -->
-    <link rel="stylesheet" href="alert.mob.css"/>    
-
 </head>
 <body>
 <input type="button" value="confirm - 包含了alert和tip" id='btnConfirm'>
@@ -16,13 +13,14 @@
 <input type="button" value="loading - 无参数，默认提示" id='btnLoad2'>
 
 
-<input type="button" value="tips" id='btnTips'>
+<input type="button" value="tip - " id='btnLoad3'>
+
 
 
 <script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- alert -->
-<script src="alert.mob.js"></script>
+<script src="alertcss.mob.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -51,7 +49,6 @@ $(function(){
       console.info('loaded');
       $.loaded();
     },2000);
-    
   });
   
   $('#btnLoad2').click(function(){
@@ -65,12 +62,10 @@ $(function(){
     },2000);
     
   });
-  
-  $('#btnTips').click(function(){
-    $.tips('点击了取消按钮！');
+
+  $('#btnLoad3').click(function(){
+    $.tips('这是一个提示');
   });
-  
-  
 
   
 
